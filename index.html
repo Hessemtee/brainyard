@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Graveyard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="top">
+        <div>
+          <h1>Project Graveyard</h1>
+          <p class="sub">Un cimetière d’idées pour éviter qu’elles ne hantent ton cerveau.</p>
+        </div>
+      </header>
+
+      <section class="panel" aria-label="Ajouter une idée">
+        <form id="ideaForm" autocomplete="off">
+          <div class="grid">
+            <label class="field">
+              <span class="label">Titre</span>
+              <input id="title" name="title" required maxlength="140" placeholder="Ex: App pour… / Script pour… / Projet fou…" />
+            </label>
+
+            <label class="field">
+              <span class="label">Statut</span>
+              <select id="status" name="status" required>
+                <option value="À tester">À tester</option>
+                <option value="En pause">En pause</option>
+                <option value="Enterrée">Enterrée</option>
+              </select>
+            </label>
+
+            <label class="field col2">
+              <span class="label">Texte libre (moche autorisé)</span>
+              <textarea id="body" name="body" rows="3" placeholder="Tout ce que tu veux. Vague, brut, pas propre." required></textarea>
+            </label>
+
+            <label class="field col2">
+              <span class="label">Pourquoi ça m’excite (1 à 3 phrases max)</span>
+              <textarea id="excite" name="excite" rows="2" placeholder="Émotion > logique. Ce que ça te fait, pas ce que ça prouve." required></textarea>
+            </label>
+
+            <label class="field col2">
+              <span class="label">Pourquoi je ne la fais pas maintenant</span>
+              <textarea id="notNow" name="notNow" rows="2" placeholder="Contrainte réelle: temps / énergie / priorité / peur." required></textarea>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn">Ajouter</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" aria-label="Liste des idées">
+        <div class="listHeader">
+          <h2>Idées</h2>
+        </div>
+        <ul id="ideas" class="list"></ul>
+        <p id="empty" class="muted empty">Aucune idée pour l’instant. Ajoute-en une en haut.</p>
+      </section>
+
+      <footer class="foot">
+        <p class="closing">
+          Toutes les idées ne méritent pas d’être réalisées.<br />
+          Certaines méritent juste d’être enterrées proprement.
+        </p>
+      </footer>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
